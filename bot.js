@@ -26,10 +26,11 @@ client.on('ready', () => {
 client.on('message', (message) => {
   log('Message found: {}', message);
   log('Message content: {}', message.content);
-  // If the message is "ping"
   if (message.content === 'ping') {
-    // Send "pong" to the same channel
     message.channel.send('pong');
+  } else if (message.content === 'off') {
+    message.channel.send('turning off');
+    process.exit();
   }
 });
 
