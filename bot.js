@@ -12,7 +12,7 @@ const client = new Discord.Client();
 
 const debug = require('debug');
 
-const log = debug('mylib:randomid');
+const log = debug('debugger');
 
 /**
  * The ready event is vital, it means that only _after_ this will your bot start
@@ -24,6 +24,8 @@ client.on('ready', () => {
 
 // Create an event listener for messages
 client.on('message', (message) => {
+  log('Message found: {}', message);
+  log('Message content: {}', message.content);
   // If the message is "ping"
   if (message.content === 'ping') {
     // Send "pong" to the same channel
