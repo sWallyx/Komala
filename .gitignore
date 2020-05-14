@@ -119,4 +119,4 @@ dist
 .vscode
 
 # eslint config
-.jshintrc
+.eslintrc.json
