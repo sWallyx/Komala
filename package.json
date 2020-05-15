@@ -1,17 +1,27 @@
 {
-    "name": "greeter-bot",
+    "name": "komala",
     "version": "0.0.1",
-    "description": "Mi primer bot de Discord",
-    "main": "bot.js",
+    "description": "Discord music bot",
+    "main": "main.js",
     "author": "sWallyx",
+    "scripts": {
+        "start": "node ./src/main.js"
+    },
     "dependencies": {
+        "acorn": "^7.2.0",
+        "acorn-jsx": "^5.2.0",
         "debug": "^4.1.1",
         "discord.js": "^12.2.0",
-        "dotenv": "^8.2.0"
+        "dotenv": "^8.2.0",
+        "ejs": "^3.1.2",
+        "express": "^4.17.1"
     },
     "devDependencies": {
         "eslint": "^6.8.0",
         "eslint-config-airbnb-base": "^14.1.0",
         "eslint-plugin-import": "^2.20.2"
+    },
+    "engines": {
+      "node": "13.12.0"
     }
 }

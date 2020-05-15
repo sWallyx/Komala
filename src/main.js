@@ -10,8 +10,8 @@ const Discord = require('discord.js');
 // Create an instance of a Discord client
 const client = new Discord.Client();
 
+// Define debugger things
 const debug = require('debug');
-
 const log = debug('debugger');
 
 function sendMessage(clientForMessage, message) {
@@ -21,6 +21,23 @@ function sendMessage(clientForMessage, message) {
 function replyWithAvatar(clientForMessage) {
   clientForMessage.reply(clientForMessage.author.displayAvatarURL());
 }
+// Define things for express
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.set('view engine', 'ejs');
+
+/* Start web server on the port 80 */
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(PORT, () => {
+  log('Example app listening on port {}!', PORT);
+});
+
+
 /**
  * The ready event is vital, it means that only _after_ this will your bot start
  * reacting to information received from Discord
@@ -50,3 +67,4 @@ client.on('message', (message) => {
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login(process.env.BOT_TOKEN);
+
