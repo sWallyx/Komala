@@ -14,6 +14,21 @@ const debug = require('debug');
 
 const log = debug('debugger');
 
+const express = require('express');
+
+const app = express();
+app.set('view engine', 'ejs');
+
+/* Start web server on the port 80 */
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(80, () => {
+  log('Example app listening on port 80!');
+});
+
+
 /**
  * The ready event is vital, it means that only _after_ this will your bot start
  * reacting to information received from Discord
@@ -35,3 +50,4 @@ client.on('message', (message) => {
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login(process.env.BOT_TOKEN);
+
