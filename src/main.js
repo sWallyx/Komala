@@ -26,11 +26,13 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Set view engine and static folder
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 /* Start web server on the port 80 */
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.render('index');
 });
 
 app.listen(PORT, () => {
@@ -49,7 +51,7 @@ client.on('ready', () => {
 });
 
 // Create an event listener for messages
-client.on('message', (message) => {
+client.on('message', async message => {
   if (!message.guild) return;
   log('Message found: {}', message);
   log('Message content: {}', message.content);
@@ -62,6 +64,13 @@ client.on('message', (message) => {
     process.exit();
   } else if (message.content === 'avatar') {
     replyWithAvatar(message);
+  } else if (message.content === '!join') {
+    // Only try to join the sender's voice channel if they are in one themselves
+    if (message.member.voice.channel) {
+      const connection = await message.member.voice.channel.join();
+    } else {
+      message.reply('You need to join a voice channel first!');
+    }
   }
 });
 

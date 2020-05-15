@@ -7,6 +7,10 @@
 
 __Komala__ is a bot for discord to play music, from youtube.
 
+## Commands
+
+!join The bot joins the voice channel use is in.
+
 ## Licence
 MIT
 
