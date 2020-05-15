@@ -24,8 +24,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(80, () => {
-  log('Example app listening on port 80!');
+app.listen(3000, () => {
+  log('Example app listening on port 3000!');
 });
 
 
