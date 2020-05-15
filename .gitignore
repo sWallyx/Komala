@@ -120,3 +120,6 @@ dist
 
 # eslint config
 .eslintrc.json
+
+#compile functions
+functions
