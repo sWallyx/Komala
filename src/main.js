@@ -10,13 +10,15 @@ const Discord = require('discord.js');
 // Create an instance of a Discord client
 const client = new Discord.Client();
 
+// Define debugger things
 const debug = require('debug');
-
 const log = debug('debugger');
 
+// Define things for express
 const express = require('express');
-
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.set('view engine', 'ejs');
 
 /* Start web server on the port 80 */
@@ -24,8 +26,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(3000, () => {
-  log('Example app listening on port 3000!');
+app.listen(PORT, () => {
+  log('Example app listening on port {}!', PORT);
 });
 
 
