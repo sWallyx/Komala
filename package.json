@@ -5,8 +5,7 @@
     "main": "main.js",
     "author": "sWallyx",
     "scripts": {
-        "start": "./node_modules/.bin/komala serve src",
-        "build": "./node_modules/.bin/komala build src"
+        "start": "node ./src/main.js"
     },
     "dependencies": {
         "acorn": "^7.2.0",
