@@ -17,6 +17,7 @@ const log = debug('debugger');
 const express = require('express');
 
 const app = express();
+app.set('view engine', 'ejs');
 
 /* Start web server on the port 80 */
 app.get('/', (req, res) => {
@@ -26,6 +27,8 @@ app.get('/', (req, res) => {
 app.listen(80, () => {
   log('Example app listening on port 80!');
 });
+
+
 
 /**
  * The ready event is vital, it means that only _after_ this will your bot start
